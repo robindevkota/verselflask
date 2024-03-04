@@ -1,41 +1,41 @@
-{
-    "version":2,
-    "build": [
-        {
-            "src":"./index.py",
-            "use":"@vercel/python",
-            "config":{"runtime":"python3.6"}
-        }
-    ],
-    "routes": [
-        {
-            "src":"/(.*)",
-            "dest":"/"
-        }
-    ]
-}
-
 // {
-//     "version": 2,
-//     "functions": {
-//       "api": {
-//         "handler": "api/app.handler",
-//         "runtime": "python3.8",
-//         "memory": 1024
-//       }
-//     },
-//     "routes": [
-//       { "handle": "filesystem" },
-//       {
-//         "src": "/",
-//         "dest": "/api"
-//       }
+//     "version":2,
+//     "build": [
+//         {
+//             "src":"./index.py",
+//             "use":"@vercel/python",
+//             "config":{"runtime":"python3.6"}
+//         }
 //     ],
-//     "builds": [
-//       {
-//         "src": "api/**",
-//         "use": "@vercel/static-build"
-//       }
+//     "routes": [
+//         {
+//             "src":"/(.*)",
+//             "dest":"/"
+//         }
 //     ]
-//   }
+// }
+
+{
+    "version": 2,
+    "functions": {
+      "api": {
+        "handler": "api/app.handler",
+        "runtime": "python3.8",
+        "memory": 1024
+      }
+    },
+    "routes": [
+      { "handle": "filesystem" },
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ],
+    "builds": [
+      {
+        "src": "./index.py",
+        "use": "@vercel/static-build"
+      }
+    ]
+  }
   
